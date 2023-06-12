@@ -51,7 +51,7 @@ const handleUpdate = async()=>{
 }
 const {trigger} = useSWRMutation("http://localhost:8080/api/v1/user",type==1?handleComment:type==2?handleUpdate:handleReply,{validate:true});
   return (
-    <div className={`container p-3 d-lg-flex justify-content-between align-items-start pb-4 ${type!=1?"col-lg-7":"col-lg-9"}  col-11 mt-3 bg-white ${style.commentArea}`}>
+    <div className={`container p-3 d-lg-flex justify-content-between align-items-start pb-4 ${type!=1?"col-lg-9":"col-lg-7"}  col-11 mt-3 bg-white ${style.commentArea}`}>
         <textarea ref={inputRef} maxLength={200}  rows={3} onChange={(e)=>setComment(e.target.value)} className={`form-control-lg  col-lg-8 w-sm-100 order-2`} type='text'/> 
         
         {current?.imageUrl &&<Image className='order-1' src={current?.imageUrl} width={35} height={35} alt='user avatar'/> }  
