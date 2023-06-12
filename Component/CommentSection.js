@@ -9,7 +9,7 @@ const CommentSection = ({current,type,id,isEdit,isReplying}) => {
     const inputRef = useRef();
 
   const handleComment = async ()=>{
-    const response = await fetch(`http://localhost:8080/api/v1/user/comment/add`,{
+    const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/comment/add`,{
         method:'POST',
         body:JSON.stringify({
             "content":comment
@@ -24,7 +24,7 @@ const CommentSection = ({current,type,id,isEdit,isReplying}) => {
    
 }
 const handleReply = async ()=>{
-    const response = await fetch(`http://localhost:8080/api/v1/user/comment/reply/${id}`,{
+    const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/comment/reply/${id}`,{
         method:'POST',
         body:JSON.stringify({
             "content":comment
@@ -40,7 +40,7 @@ const handleReply = async ()=>{
    
 }
 const handleUpdate = async()=>{
-      const response = await fetch(`http://localhost:8080/api/v1/user/updateComment/${id}?body=${comment}`,{
+      const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/updateComment/${id}?body=${comment}`,{
           method:'PUT',
       });
       isEdit(0);
