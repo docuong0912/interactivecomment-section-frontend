@@ -1,0 +1,88 @@
+.reply{
+    border-left: 1px solid lightgrey;
+}
+.commentArea{
+    border-radius: 10px;
+    position: relative;
+}
+.textArea{
+    word-wrap: break-word;
+}
+.comment{
+    animation-name: new;
+    animation-duration: 1s;
+    background-color: transparent;
+
+}
+.sendBtn{
+    margin-left: 55%;
+}
+@keyframes new {
+    from{
+        background-color: #228B22;
+    }
+    to{
+        background-color: transparent;
+    }
+}
+.mention{
+    position: absolute;
+    top:25px;
+    left:20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.xMark{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right:5px;
+    top:2px;
+    width: 15px;
+    height: 15px;
+    
+    border-radius: 50%;
+}
+.innerComment{
+    padding: 10px;
+}
+@media screen and (min-width:1024px)  {
+    .sendBtn{
+        margin-left: 0;
+    }
+    .comment{
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    .reply{
+        width: 65%;
+        margin-left: 350px;
+        
+    }
+    .scoreContainer{
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-between;
+        top:20px;
+        left:20px;
+        border-radius: 10px;
+        width: 40px;
+    }
+    .innerComment{
+        padding-left: 100px;
+        border-radius: 10px;
+        height: 200px;
+    }
+    .replyBtn{
+        position: absolute;
+        top:0;
+        right:0;
+    }
+    .modifyBlock{
+        position: absolute;
+        top: 5px;
+        right: 0;
+    }
+    
+}
