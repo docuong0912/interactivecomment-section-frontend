@@ -5,8 +5,8 @@ import CommentSection from '@/Component/CommentSection';
 import Comment from '@/Component/Comment';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const Post = () => {
-    const { data:comments, mutate } = useSWR('http://localhost:8080/api/v1/user', fetcher);
-    const { data:CurrentUser, error} = useSWR('http://localhost:8080/api/v1/user/username/juliusomo', fetcher);
+    const { data:comments, mutate } = useSWR('interactive-comments-backend-production.up.railway.app/api/v1/user', fetcher);
+    const { data:CurrentUser, error} = useSWR('interactive-comments-backend-production.up.railway.app/api/v1/user/username/juliusomo', fetcher);
     const [users,setUser] = useState(comments);
     const [current,setCurrent] = useState(CurrentUser);
     const [type,setType] = useState(1);
