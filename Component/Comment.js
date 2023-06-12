@@ -10,7 +10,7 @@ const Comment = ({isReplying,reply,user,setType,isReply,edit,isEdit,current}) =>
     const [prevScore,setPrev] = useState(0);
 
     const hanldeScore = async (plus)=>{
-        const response = await fetch(`interactive-comments-backend-production.up.railway.app/api/v1/user/updateScore/${user.id}?isPlus=${plus}&&prevScore=${prevScore}`,{
+        const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/updateScore/${user.id}?isPlus=${plus}&&prevScore=${prevScore}`,{
             method:'PUT'
         });
         const data = await response.json();
@@ -27,7 +27,7 @@ const Comment = ({isReplying,reply,user,setType,isReply,edit,isEdit,current}) =>
     }
     const handleDelete = ()=>{
         mutate(`http://localhost:8080/api/v1/user`,async (comments)=>{
-            const response = await fetch(`interactive-comments-backend-production.up.railway.app/api/v1/user/comment/delete/${user.id}`,{
+            const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/comment/delete/${user.id}`,{
                 method:'DELETE'
             })
             return [...comments];
