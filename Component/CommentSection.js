@@ -20,15 +20,6 @@ const CommentSection = ({current,setUser,type,id,isEdit,isReplying}) => {
     });
     const data = await response.json();
     inputRef.current.value="";
-    const datePrev = new Date().getTime()/1000;
-    setUser(oldUser=>[...oldUser,{user:{
-        username:"juliosomo",
-        imageUrl:"/images/avatars/image-juliusomo.png",
-        period: Math.floor(Date.now()/1000-datePrev),
-        replyTo:null,
-        content:comment,
-        reply:[]
-    }}])
     return Odata=>[...Odata,data];
    
 }
