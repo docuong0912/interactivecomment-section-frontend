@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useSWR from 'swr';
+import useSWR,{preload} from 'swr';
 import style from "../../styles/Comment.module.css";
 import CommentSection from '@/Component/CommentSection';
 import Comment from '@/Component/Comment';
