@@ -64,7 +64,7 @@ const {trigger} = useSWRMutation("https://interactive-comments-backend-productio
         <textarea ref={inputRef} maxLength={200}  rows={3} onChange={(e)=>setComment(e.target.value)} className={`form-control-lg  col-lg-8 w-sm-100 order-2`} type='text'/> 
         
         {current?.imageUrl &&<Image className='order-1' src={current?.imageUrl} width={35} height={35} alt='user avatar'/> }  
-        <button onClick={trigger} className={`order-3 btn btn-primary col-4 col-lg-2 btn-lg ${style.sendBtn}`}>{type == 1?"send":type==2?"update":"reply"}</button>
+        <button onClick={()=>trigger({optimisticData:type==1?handleComment:type==2?handleUpdate:handleReply})} className={`order-3 btn btn-primary col-4 col-lg-2 btn-lg ${style.sendBtn}`}>{type == 1?"send":type==2?"update":"reply"}</button>
         
     </div>
   )
