@@ -4,7 +4,7 @@ import style from '../styles/Comment.module.css';
 import Image from 'next/image';
 import CommentSection from './CommentSection';
 import { mutate } from 'swr';
-const Comment = ({isReplying,reply,user,setType,isReply,edit,isEdit,current}) => {
+const Comment = ({isReplying,reply,user,setType,isReply,edit,isEdit,current,setUser}) => {
     const [score,setScore] = useState(user.score);
     const btn = useRef([]);
     const [prevScore,setPrev] = useState(0);
@@ -29,7 +29,8 @@ const Comment = ({isReplying,reply,user,setType,isReply,edit,isEdit,current}) =>
         mutate(`http://localhost:8080/api/v1/user`,async (comments)=>{
             const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/comment/delete/${user.id}`,{
                 method:'DELETE'
-            })
+            });
+            setUser([...comments]);
             return [...comments];
         },{revalidate:true})
     }
