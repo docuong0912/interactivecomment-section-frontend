@@ -28,12 +28,12 @@ const Post = () => {
                 users?.map((user,key)=>{
                     return(
                         <div key={key}>
-                            <Comment reply={reply} current={current} isReplying={isReplying} edit={edit} isEdit={isEdit} type={3} setType={setType} isReply={false} user={user}/>
+                            <Comment setUser={setUser} reply={reply} current={current} isReplying={isReplying} edit={edit} isEdit={isEdit} type={3} setType={setType} isReply={false} user={user}/>
                             {
                                 user.reply.map((r,key)=>{
                                     return(
                                         <div key={key}>
-                                            <Comment current={current} reply={reply} isReplying={isReplying} edit={edit} isEdit={isEdit} type={3} setType={setType} isReply={true} user={r}/>
+                                            <Comment setUser={setUser} current={current} reply={reply} isReplying={isReplying} edit={edit} isEdit={isEdit} type={3} setType={setType} isReply={true} user={r}/>
                                         </div>
                                     
                                     );
