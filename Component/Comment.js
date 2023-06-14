@@ -26,7 +26,7 @@ const Comment = ({isReplying,reply,user,setType,isReply,edit,isEdit,current,setU
        
     }
     const handleDelete = ()=>{
-        mutate(`http://localhost:8080/api/v1/user`,async (comments)=>{
+        mutate(`https://interactive-comments-backend-production.up.railway.app/api/v1/user`,async (comments)=>{
             const response = await fetch(`https://interactive-comments-backend-production.up.railway.app/api/v1/user/comment/delete/${user.id}`,{
                 method:'DELETE'
             });
